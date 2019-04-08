@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float Thrustspeed = 5f; // int or bool?
     [SerializeField] float Rotationspeed = 5f;
     // Do I need a seperate rotate speed?
+    [SerializeField] GameObject[] guns;
 
     Rigidbody2D rb2D;
 
@@ -52,5 +54,31 @@ public class PlayerMovement : MonoBehaviour
         //{
         //    transform.Rotate(-transform.forward * Rotationspeed * Time.deltaTime);
         //}
+
+        ProcessFiring();
     }
+
+    void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire1")) // Should be the mouse right click. Does fuck all.
+        {
+            SetGunsActive(true);
+            //StartFiringSFX();
+        }
+        else
+        {
+            SetGunsActive(false);
+            //StopFiringSFX();
+        }
+    }
+
+    void SetGunsActive(bool isActive)
+    {
+        foreach (GameObject gun in guns)
+        {
+            var emissionModule = gun.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = isActive;
+        }
+    }
+
 }
