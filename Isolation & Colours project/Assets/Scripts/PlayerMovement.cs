@@ -13,6 +13,11 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb2D;
 
+    void Awake()
+    {
+        SetGunsActive(false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,15 +65,18 @@ public class PlayerMovement : MonoBehaviour
 
     void ProcessFiring()
     {
-        if (CrossPlatformInputManager.GetButton("Fire1")) // Should be the mouse right click. Does fuck all.
-        {
+        //if (CrossPlatformInputManager.GetButton("Fire1")) // Should be the mouse right click. Does fuck all.
+        if (Input.GetKey(KeyCode.Space)) // Should be the mouse right click. Does fuck all.
+            {
             SetGunsActive(true);
             //StartFiringSFX();
+            print("Set guns active true");
         }
         else
         {
             SetGunsActive(false);
             //StopFiringSFX();
+            print("Set guns active false");
         }
     }
 
@@ -77,8 +85,9 @@ public class PlayerMovement : MonoBehaviour
         foreach (GameObject gun in guns)
         {
             var emissionModule = gun.GetComponent<ParticleSystem>().emission;
+            print("Get particle system");
             emissionModule.enabled = isActive;
+            print("emissionModule isActive");
         }
     }
-
 }
