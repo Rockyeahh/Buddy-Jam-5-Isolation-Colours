@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb2D;
     float rotation = 0f; // It may need a more specific name.
 
+    [SerializeField] float angle = 45f;
+
     void Awake()
     {
         SetGunsActive(false);
@@ -82,12 +84,18 @@ public class PlayerMovement : MonoBehaviour
             //rotation += Rotationspeed * Time.deltaTime;
         }
 
-        float minRotation = -45;
-        float maxRotation = 45;
-        Vector3 currentRotation = transform.Find("Paint Cannon Body").localRotation.eulerAngles;
-        currentRotation.z = Mathf.Clamp(currentRotation.z, minRotation, maxRotation);
-        transform.Find("Paint Cannon Body").localRotation = Quaternion.Euler(currentRotation);
-        print(currentRotation);
+        //float minRotation = -45;
+        //float maxRotation = 45;
+        //Vector3 currentRotation = transform.Find("Paint Cannon Body").localRotation.eulerAngles;
+        //currentRotation.z = Mathf.Clamp(currentRotation.z, minRotation, maxRotation);
+        //transform.Find("Paint Cannon Body").localRotation = Quaternion.Euler(currentRotation);
+        //print(currentRotation);
+
+        //angle += Input.GetAxis("Vertical") * Time.deltaTime * 10; // There is no name for the z axis so just use vertical and set it with vector3.forward.
+        //angle = transform.Rotate(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * 10); // Rotate up and down is the z axis in rotation.
+        //angle = Mathf.Clamp(angle, 10, 80);
+        //transform.Find("Paint Cannon Body").localRotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
     }
 
     void ProcessFiring()
