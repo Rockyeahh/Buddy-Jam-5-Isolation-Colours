@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovementControls();
+        ProcessFiring();
     }
 
     private void MovementControls()
@@ -56,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         //else if (Input.Getkey(keycode.q))
         //{
         //    rotation -= rotationspeed * time.deltatime;
-        
+
         //if (input.getkey(keycode.e))
 
         //    rotation += rotationspeed * time.deltatime;
@@ -67,17 +68,13 @@ public class PlayerMovement : MonoBehaviour
         //    transform.rotation = clampedrotation; // ?
         //}
 
-        ProcessFiring();
-    }
-
-    void FixedUpdate()
-    {
         if (Input.GetKey(KeyCode.Q))
         {
             transform.Find("Paint Cannon Body").Rotate(new Vector3(0, 0, 1) * Rotationspeed * Time.deltaTime, Space.Self);
             //transform.Rotate(Vector3.forward, -Rotationspeed * Time.deltaTime); // Is forward using local or world rotation?
             //rotation -= Rotationspeed * Time.deltaTime;
-        } else if (Input.GetKey(KeyCode.E))
+        }
+        else if (Input.GetKey(KeyCode.E))
         {
             transform.Find("Paint Cannon Body").Rotate(new Vector3(0, 0, -1) * Rotationspeed * Time.deltaTime, Space.Self);
             //rotation += Rotationspeed * Time.deltaTime;
@@ -94,7 +91,6 @@ public class PlayerMovement : MonoBehaviour
         //angle = transform.Rotate(Vector3.forward * Input.GetAxis("Vertical") * Time.deltaTime * 10); // Rotate up and down is the z axis in rotation.
         //angle = Mathf.Clamp(angle, 10, 80);
         //transform.Find("Paint Cannon Body").localRotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
     }
 
     void ProcessFiring()
