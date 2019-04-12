@@ -41,12 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Mirror
+    uniqueID: 3423945747
+    locked: 0
   - name: Player
     uniqueID: 3872075447
     locked: 0
   - name: Walls
     uniqueID: 1931623663
-    locked: 0
-  - name: Mirror
-    uniqueID: 3423945747
     locked: 0

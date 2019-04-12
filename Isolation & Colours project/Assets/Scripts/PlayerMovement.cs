@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     // Do I need a seperate rotate speed?
     [SerializeField] GameObject[] guns;
 
-    Rigidbody2D rb2D;
     float rotation = 0f; // It may need a more specific name.
 
     [SerializeField] float angle = 45f;
@@ -24,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb2D = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame

@@ -307,8 +307,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -871021549
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c9a7e41a44965f14cb3716afe1b105aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9914,7 +9914,6 @@ GameObject:
   m_Component:
   - component: {fileID: 613463511}
   - component: {fileID: 613463510}
-  - component: {fileID: 613463514}
   - component: {fileID: 613463512}
   - component: {fileID: 613463513}
   m_Layer: 11
@@ -9958,8 +9957,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -422891849
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3cb41b3206a21c640bf37d5be7e4b5bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10030,27 +10029,6 @@ MonoBehaviour:
   guns:
   - {fileID: 349618742}
   angle: 45
---- !u!50 &613463514
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613463509}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &768308327
 GameObject:
   m_ObjectHideFlags: 0
@@ -10707,8 +10685,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -871021549
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c9a7e41a44965f14cb3716afe1b105aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
