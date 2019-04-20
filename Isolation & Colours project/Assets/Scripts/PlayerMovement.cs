@@ -96,8 +96,9 @@ public class PlayerMovement : MonoBehaviour
     void ProcessFiring()
     {
         //if (CrossPlatformInputManager.GetButton("Fire1")) // Should be the mouse right click. Does fuck all.
-        if (Input.GetKey(KeyCode.Space)) // Should be the mouse right click. Does fuck all.
-            {
+        if (Input.GetKey(KeyCode.Mouse0)) // OLD CODE: (Input.GetKey(KeyCode.Space))
+        {
+            //Debug.Log("Pressed left button.");
             SetGunsActive(true);
             //StartFiringSFX();
             //print("Set guns active true");
