@@ -1,17 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Mirror : MonoBehaviour
 {
-    // Add in a inspector message for the bool bellow to tell the designer to only tick this if it needs to be the correct mirror/final mirror in a puzzle room/level.
-    [SerializeField] bool Stuffname = false; // TODO: A better nmame is needed!
-     SpriteRenderer spriteRenderer;
+    [Tooltip ("Leave unticked unless it is the final mirror in the level/puzzle.")]
+    [SerializeField] bool CurrentMirrorstate = false; // TODO: A better name is needed!
+    SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Get SpriteRenderer here?
          spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -21,13 +21,18 @@ public class Mirror : MonoBehaviour
         
     }
 
-    void OnParticleCollision(GameObject gameObject) // Maybe because it bounces off, it doesn't Enter and thus OnCollision Enter doesn't get called.
-                                                           // Maybe it needs to be more than discrete, could be continous.
-    {                                           // What about if it's positive or negative/the final mirror in a level/puzzle?
-        // Get Sprite Renderer                  // Get the Sprite Renderer changing colour first. Then work if conditions.
-        // SpriteRenderer set color red
-         spriteRenderer.color = Color.red; // This could be replaced with a sound to reprsent it later and maybe even some kind of particle effect 
-                                          // or light and that glows around the Mirror that resets after a few seconds.
+    void OnParticleCollision(GameObject gameObject)
+    {
+        if (CurrentMirrorstate == false)
+        {
+            spriteRenderer.color = Color.red; // This could be replaced with a sound to reprsent it later and maybe even some kind of particle effect 
+                                             // or light and that glows around the Mirror that resets after a few seconds.
+        } else if (CurrentMirrorstate == true)
+        {
+            spriteRenderer.color = Color.blue;
+            print("Level complete. Load next level or open door/wall to the next level.");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     // Just some notes: The set color.red stuff above needs to set it as that if it's not the final mirror, we'll call that winMirror.
