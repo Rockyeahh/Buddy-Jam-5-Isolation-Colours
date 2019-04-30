@@ -41,9 +41,7 @@ public class MusicPlayer : MonoBehaviour
     {
         // The build index code aligns the audio clips with the scene numbers with exception of element 0/scene 0.
         AudioClip thisLevelMusic = levelMusicArray[scene.buildIndex];
-        Debug.Log("Playing clip" + levelMusicArray[scene.buildIndex]);
-        // Replace the above with a int count list or array. On level loaded needs to say if scene.buildindex > 2 then thisLevelMusic else play element 1 and 2? 
-        // Fuck this won't work.
+        //Debug.Log("Playing clip" + levelMusicArray[scene.buildIndex]);
         if (thisLevelMusic)
         { // If there's some music attached
             audioSource.clip = thisLevelMusic;
@@ -51,5 +49,4 @@ public class MusicPlayer : MonoBehaviour
             audioSource.Play();
         }
     }
-
 }
