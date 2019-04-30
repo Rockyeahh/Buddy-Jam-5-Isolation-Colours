@@ -6,7 +6,9 @@ public class SFXPlayer : MonoBehaviour
 {
 
     public AudioClip menuClick;
-    AudioSource audioSource;
+//    public AudioClip shipShooting;
+
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -25,4 +27,8 @@ public class SFXPlayer : MonoBehaviour
         audioSource.PlayOneShot(menuClick, 0.1F);
     }
 
+//    public void ShipShooting()
+//    {
+//       audioSource.PlayOneShot(shipShooting, 0.1F);
+ //   }
 }

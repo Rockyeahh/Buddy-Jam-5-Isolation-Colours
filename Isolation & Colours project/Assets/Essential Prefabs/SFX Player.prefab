@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 967963936860601019}
-  - component: {fileID: 5727665830203812941}
   - component: {fileID: 7749212671202516661}
+  - component: {fileID: 5727665830203812941}
   m_Layer: 0
   m_Name: SFX Player
   m_TagString: Untagged
@@ -32,19 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5727665830203812941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6047766400692551181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0714e36026515e41a5fa76bc70cb155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuClick: {fileID: 8300000, guid: 70163f8838db70a4b9c57c4c90615167, type: 3}
 --- !u!82 &7749212671202516661
 AudioSource:
   m_ObjectHideFlags: 0
@@ -141,3 +128,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5727665830203812941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6047766400692551181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0714e36026515e41a5fa76bc70cb155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuClick: {fileID: 8300000, guid: 70163f8838db70a4b9c57c4c90615167, type: 3}
+  shipShooting: {fileID: 8300000, guid: e5a2545297d46ed4cbd97fdd88caa82c, type: 3}

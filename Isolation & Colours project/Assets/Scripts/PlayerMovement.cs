@@ -10,20 +10,24 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float Rotationspeed = 5f;
     // Do I need a seperate rotate speed?
     [SerializeField] GameObject[] guns;
+    [SerializeField] float angle = 45f;
+    AudioClip shipShoots;
+//    [SerializeField] SFXPlayer sfxPlayer;
 
     float rotation = 0f; // It may need a more specific name.
-
-    [SerializeField] float angle = 45f;
+    AudioSource audioSource;
 
     void Awake()
     {
         SetGunsActive(false);
+        StartFiringSFX(false);
+        print("startfiringsfx false");
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -98,16 +102,18 @@ public class PlayerMovement : MonoBehaviour
         //if (CrossPlatformInputManager.GetButton("Fire1")) // Should be the mouse right click. Does fuck all.
         if (Input.GetKey(KeyCode.Mouse0)) // OLD CODE: (Input.GetKey(KeyCode.Space))
         {
-            //Debug.Log("Pressed left button.");
+            Debug.Log("Pressed left button.");
+            StartFiringSFX(true);
+            print("Start Firing true");
             SetGunsActive(true);
-            //StartFiringSFX();
-            //print("Set guns active true");
+            print("Set guns active true");
         }
         else
         {
             SetGunsActive(false);
-            //StopFiringSFX();
-            //print("Set guns active false");
+            print("Set guns active false");
+            StartFiringSFX(false);
+            print("Start Firing false");
         }
     }
 
@@ -120,5 +126,14 @@ public class PlayerMovement : MonoBehaviour
             emissionModule.enabled = isActive;
             //print("emissionModule isActive");
         }
+    }
+
+    void StartFiringSFX(bool isActive)
+    {
+        // call the SFXPlayer! Fuck it.
+        //sfxPlayer.ShipShooting();
+        print("PRE-WTF!");
+        //audioSource.Play(shipShoots, 0.1F);
+        print("WTF!");
     }
 }
